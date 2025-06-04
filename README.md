@@ -1,3 +1,3 @@
-# hub.continue.dev source control template
+# Continue internal rules
 
-This repository is a template for managing your custom assistants and blocks on hub.continue.dev. For a quickstart guide, read the docs at https://docs.continue.dev/hub/source-control.
+This repository contains rules that are shared across multiple Continue repositories.

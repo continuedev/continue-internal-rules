@@ -1,16 +1,15 @@
-name: Publish Continue Assistant/Block(s)
+name: Publish Rules to hub.continue.dev
 
 on:
   push:
     branches:
       - main
     paths:
-      - blocks/**
-      - assistants/**
+      - src/**
       - .github/workflows/main.yaml
 
 env:
-  OWNER_SLUG: my-org-slug # <-- TODO
+  OWNER_SLUG: continuedev
 
 jobs:
   publish:
@@ -18,34 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Public blocks
-      - uses: continuedev/continue-publish-action@v1
-        with:
-          owner-slug: ${{ env.OWNER_SLUG }}
-          paths: blocks/public/**
-          api-key: ${{ secrets.CONTINUE_API_KEY }}
-
-      # Public assistants
-      - uses: continuedev/continue-publish-action@v1
-        with:
-          owner-slug: ${{ env.OWNER_SLUG }}
-          paths: assistants/public/**
-          is-assistant: true
-          api-key: ${{ secrets.CONTINUE_API_KEY }}
-
-      # Private to organization blocks
-      - uses: continuedev/continue-publish-action@v1
-        with:
-          owner-slug: ${{ env.OWNER_SLUG }}
-          paths: blocks/private/**
-          visibility: organization
-          api-key: ${{ secrets.CONTINUE_API_KEY }}
-
-      # Private to organization assistants
-      - uses: continuedev/continue-publish-action@v1
-        with:
-          owner-slug: ${{ env.OWNER_SLUG }}
-          paths: assistants/private/**
-          is-assistant: true
-          visibility: organization
-          api-key: ${{ secrets.CONTINUE_API_KEY }}
+      # # Private to organization blocks
+      # - uses: continuedev/continue-publish-action@v1
+      #   with:
+      #     owner-slug: ${{ env.OWNER_SLUG }}
+      #     paths: blocks/private/**
+      #     visibility: organization
+      #     api-key: ${{ secrets.CONTINUE_API_KEY }}
