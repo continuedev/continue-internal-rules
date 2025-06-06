@@ -1,0 +1,10 @@
+---
+description: Ensure a seamless product experience across all Continue products
+---
+
+- There is one Continue, many ways to consume it
+- There should be a consistency of paradigms, concepts, language, design, etc. across all of our IDE extensions, CLI, web interface, etc
+- The design of the user experience should be rationalized across the entirety of our product surface, even though each product will have different constraints
+- Nothing should feel bolted on or different
+- Whenever the `remote-config-server` repo changes, we need to make sure that we also make any necessary changes to the `continue` repo
+- Whenever the `continue` repo changes, we need to make sure that we also make any necessary changes to the `remote-config-server` repo
